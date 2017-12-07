@@ -1,0 +1,95 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cxx}
+class GUI {open
+} {
+  decl {\#include "scene.h"} {private local
+  }
+  Function {GUI()} {open
+  } {
+    Fl_Window uiw {
+      label GUI open selected
+      xywh {552 345 120 153} type Double visible
+    } {
+      Fl_Button {} {
+        label CubeMap
+        callback {DBG_cb()}
+        xywh {120 85 70 20} selection_color 72 align 128
+      }
+      Fl_Button {} {
+        label Reflections
+        callback {NewButton_cb()}
+        xywh {120 60 70 20} align 128
+      }
+      Fl_Button {} {
+        label Left
+        callback {Left_cb()}
+        xywh {15 15 45 40}
+      }
+      Fl_Button {} {
+        label Right
+        callback {Right_cb()}
+        xywh {65 15 45 40}
+      }
+      Fl_Button {} {
+        label {Roll Front}
+        callback {Up_cb()}
+        xywh {15 60 45 40} align 128
+      }
+      Fl_Button {} {
+        label {Roll Back}
+        callback {Down_cb()}
+        xywh {65 60 45 40} align 128
+      }
+      Fl_Button {} {
+        label {Tilt Left}
+        callback {TiltL_cb()}
+        xywh {15 105 45 40} align 128
+      }
+      Fl_Button {} {
+        label {Tilt Right}
+        callback {TiltR_cb()}
+        xywh {65 105 45 40} align 128
+      }
+    }
+  }
+  Function {} {} {
+    code {scene = new Scene;} {}
+  }
+  Function {show()} {} {
+    code {uiw->show();} {}
+  }
+  Function {DBG_cb()} {open
+  } {
+    code {scene->DBG();} {}
+  }
+  Function {NewButton_cb()} {open
+  } {
+    code {scene->NewButton();} {}
+  }
+  Function {Up_cb()} {open
+  } {
+    code {scene->Up();} {}
+  }
+  Function {Down_cb()} {open
+  } {
+    code {scene->Down();} {}
+  }
+  Function {Left_cb()} {open
+  } {
+    code {scene->Left();} {}
+  }
+  Function {Right_cb()} {open
+  } {
+    code {scene->Right();} {}
+  }
+  Function {TiltL_cb()} {open
+  } {
+    code {scene->Up1();} {}
+  }
+  Function {TiltR_cb()} {open
+  } {
+    code {scene->Down1();} {}
+  }
+}
